@@ -1,10 +1,12 @@
-import imp
 from flask import Flask, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
+
+from forms import LoginForm
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = "temperory_Secret_key"
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
@@ -16,6 +18,13 @@ class Todo(db.Model):
 def index():
     todo_list = Todo.query.all()
     return render_template("base.html", todo_list=todo_list)
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/')
+    return render_template("login.html", form=form)
 
 @app.route("/about")
 def about():
