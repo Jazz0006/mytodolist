@@ -1,8 +1,6 @@
 from flask import Flask, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-from forms import LoginForm
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -21,10 +19,12 @@ def index():
 
 @app.route("/login")
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        return redirect('/')
     return render_template("login.html", form=form)
+
+@app.route("/signup")
+def signup():
+
+    return render_template("signup.html")
 
 @app.route("/about")
 def about():
