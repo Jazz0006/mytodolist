@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import Todo, User
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_required, login_user, logout_user
 
 @app.route("/")
 @app.route("/index")
@@ -54,6 +54,7 @@ def about():
     return "Site designed by Jazz"
 
 @app.route("/add", methods=["POST"])
+@login_required
 def add():
     title = request.form.get("title")
     new_todo = Todo(title=title, complete=False, owner=current_user)
