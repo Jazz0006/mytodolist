@@ -14,23 +14,30 @@
         <div class="ui container">
             <h1 class="ui center aligned header">New User Registration</h1>
 
-            <form class="ui form" action="/signup" method="post">
-                <div class="field">
-                    <label>User Email</label>
-                    <input type="text" name="email" placeholder="Email...">
-                </div>
-                
-                <div class="field">
-                    <label>Password</label>
-                    <input type="text" name="password" placeholder="Enter Password...">
-                </div>
-
-                <div class="field">
-                    <label>Repeat Password</label>
-                    <input type="text" name="password2" placeholder="Repeat Your Password...">
-                </div>
-                
-                <button class="ui blue button">Register</button>
+            <form class="ui form" action="" method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.email.label }}<br>
+                    {{ form.email(size=32) }}<br>
+                    {% for error in form.email.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32) }}<br>
+                    {% for error in form.password.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password2.label }}<br>
+                    {{ form.password2(size=32) }}<br>
+                    {% for error in form.password2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit }}</p>
             </form>
 
         </div>
