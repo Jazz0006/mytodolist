@@ -9,7 +9,7 @@ class Todo(db.Model):
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    due_day = db.Column(db.DateTime, default=date.today)
+    due_day = db.Column(db.Date, default=date.today)
 
     def __repr__(self):
         return f'<Task {self.title}'
