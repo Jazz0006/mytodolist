@@ -54,3 +54,15 @@ The full list of libraries is in [Requirement.txt](https://github.com/Jazz0006/m
 ![Plan02](./docs/plan02.jpg)
 
 ![Implementation02](./docs/implementation02.jpg)
+
+## Test
+
+Test account:
+
+- email: test@user.net
+
+- password: 1
+
+![example screen](./docs/example01.jpg)
+
+Unit test and integration test are planned and to be done in the next step.
