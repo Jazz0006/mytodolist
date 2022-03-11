@@ -1,82 +1,58 @@
 # Assignment T4A2: ToDo List Web App
 
-## Description
+## Deployment
 
-### Purpose
+This project is deployed on Oracle cloud. The links is: http://todo.junzeng.site or http://152.67.111.122/
 
-This is a website for users to login and check on a daily basis. Users can record their things to be finished and get reminded when deadling comes.
+## Github Link
 
-### Features
+https://github.com/Jazz0006/mytodolist
 
-Users can add items to Today's List or Future's List.
+## Libraries Used:
 
-Tasks in the Future's List optionally has a due date.
+- email-validator
 
-Today's List will be automatically updated based on the due date.
+    Validate email address for form imput
 
-Finished tasks will be moved to Finished List.
+- Flask
 
-### Target Audience
+    The framework for Python web application
 
-Individual users who needs to record their daily tasks.
+- Flask-Login
 
-### Tech Stack
+    The Flask plug-in for user management functions
 
-- Python / Flask
-- HTML / CSS 
-- SQLite
-- AWS
+- Flask-Migrate
 
-## Dataflow Diagram
+    The Flask plug-in for database migration
 
-![Data Flow Diagram](./docs/dfd_assignmentT4.png)
+- Flask-SQLAlchemy
 
-## Application Architecture Diagram
+    The Flask plug-in for database management interface
 
-![Application Architecture Diagram](./docs/aad.png)
+- Flask-WTF==1.0.0
 
-## User Stories
+    The Flask plug-in for web form
 
-As a person living in mordern sociaty, everyone has many things to do and to remember. I want to have a app to remind me what I need to do within today, to show me what I achieved today, and what are the tasks for future.
+- gunicorn
 
-When adding a new task, by default it is due today, and it will be saved in "today's list". If I specify a due date which is not today, the task will be saved in "future list".
+    A Python HTTP server
 
-When date changes, today's list will be updated automatically, those tasks in future list but due date is today will be moved to today's list.
+- Jinja2==3.0.3
 
-I can mark the task as done, in that case the taks will be moved to today's achievement.
+    A template engine used by Flask
 
-Above are the core functions of this web app. Below are the extensive function that will be added after the implementation of core functions
+- PyMySQL==1.0.2
 
-Quite often a task is a very small one and I do not want it to be shown in the list of achievement, in that case I can hide the task.
+    The Python library for managing MySQL database
 
-I can still search all the tasks in the database, including those hidden tasks.
+- python-dotenv==0.19.2
 
-I can search all the tasks by due date, content, tag or category.
+    The library for applications to read .env file and set them as environment variables.
 
-## Wireframes
+- SQLAlchemy==1.4.31
 
-- Registration page for both desktop and mobile browsers:
+    The SQL toolkit and Object Relational Mapper.
 
-![Registration Page](./docs/Registration.png)
+The full list of libraries is in [Requirement.txt](https://github.com/Jazz0006/mytodolist/blob/main/Requirements.txt)
 
-- Sign-in page for both desktop and mobile browsers:
-
-![Sign in Page](./docs/signin.png)
-
-- List page for desktop view:
-
-![List - Desktop](./docs/desktop-lists.png)
-
-- List page for mobile view:
-
-![List - Mobile](./docs/mobile-list.png)
-
-## Screenshot of Trello Board
-
-![Trello01](./docs/trello01.png)
-
-![Trello02](./docs/trello02.png)
-
-![Trello03](./docs/trello03.png)
-
-![Trello04](./docs/trello04.png)
